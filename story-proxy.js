@@ -1,0 +1,25 @@
+import express from 'express';
+import axios from 'axios';
+import cors from 'cors';
+
+const app = express();
+
+app.use(cors());
+
+app.get('/proxy-story', async (req, res) => {
+    try {
+        const url = req.query.url;
+        if (!url) {
+            return res.status(400).send('URL query parameter is required.');
+        }
+
+        const response = await axios.get(url);
+        res.send(response.data);
+
+    } catch (error) {
+        console.error('Error fetching the story:', error);
+        res.status(500).send('Error fetching the story.');
+    }
+});
+
+export default app;

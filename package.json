@@ -1,0 +1,12 @@
+{
+  "name": "story-proxy",
+  "version": "1.0.0",
+  "description": "A proxy server to fetch Gemini stories.",
+  "main": "api/story-proxy.js",
+  "type": "module",
+  "dependencies": {
+    "express": "^4.18.2",
+    "axios": "^1.4.0",
+    "cors": "^2.8.5"
+  }
+}

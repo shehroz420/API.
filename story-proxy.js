@@ -6,7 +6,7 @@ const app = express();
 
 app.use(cors());
 
-app.get('/proxy-story', async (req, res) => {
+app.get('/api/story-proxy', async (req, res) => {
     try {
         const url = req.query.url;
         if (!url) {
